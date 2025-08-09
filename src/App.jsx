@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Form from './components/Form';
 import Education from './utils/Education';
 import Practice from './utils/Practice';
 
@@ -11,5 +12,10 @@ export default function App() {
     practice: [new Practice()],
   });
 
-  return <h1>CV Application</h1>;
+  return (
+    <>
+      <h1>CV Application</h1>
+      <Form data={data} setData={setData} />
+    </>
+  );
 }
