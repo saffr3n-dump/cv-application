@@ -1,5 +1,6 @@
 import GeneralFieldSet from './GeneralFieldSet';
 import EducationFieldSet from './EducationFieldSet';
+import PracticeFieldSet from './PracticeFieldSet';
 import Education from '../utils/Education';
 import Practice from '../utils/Practice';
 
@@ -25,6 +26,7 @@ export default function Form({ data, setData }) {
     <form>
       <GeneralFieldSet data={data} change={change} />
       <EducationFieldSet data={data} change={change} remove={remove} add={add} />
+      <PracticeFieldSet data={data} change={change} remove={remove} add={add} />
       <button type="submit">Submit</button>
     </form>
   );
