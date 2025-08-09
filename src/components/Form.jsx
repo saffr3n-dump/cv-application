@@ -1,4 +1,7 @@
 import GeneralFieldSet from './GeneralFieldSet';
+import EducationFieldSet from './EducationFieldSet';
+import Education from '../utils/Education';
+import Practice from '../utils/Practice';
 
 export default function Form({ data, setData }) {
   const change = (where) => (e) => {
@@ -8,9 +11,20 @@ export default function Form({ data, setData }) {
     setData({ ...data });
   };
 
+  const remove = (what, at) => () => {
+    data[what].splice(at, 1);
+    setData({ ...data });
+  };
+
+  const add = (what) => () => {
+    data[what].push(what === 'education' ? new Education() : new Practice());
+    setData({ ...data });
+  };
+
   return (
     <form>
       <GeneralFieldSet data={data} change={change} />
+      <EducationFieldSet data={data} change={change} remove={remove} add={add} />
       <button type="submit">Submit</button>
     </form>
   );
