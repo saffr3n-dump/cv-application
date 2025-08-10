@@ -1,3 +1,5 @@
+import '../styles/fieldset.css';
+
 export default function FieldSet({ legend, children }) {
   return (
     <fieldset>

@@ -1,0 +1,8 @@
+fieldset {
+  display: grid;
+
+  & button {
+    margin-top: 0.5rem;
+    justify-self: center;
+  }
+}

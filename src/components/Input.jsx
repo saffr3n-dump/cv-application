@@ -1,3 +1,5 @@
+import '../styles/input.css';
+
 export default function Input({
   type,
   name,
