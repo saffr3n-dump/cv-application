@@ -4,7 +4,7 @@ import PracticeFieldSet from './PracticeFieldSet';
 import Education from '../utils/Education';
 import Practice from '../utils/Practice';
 
-export default function Form({ data, setData }) {
+export default function Form({ data, setData, setEditMode }) {
   const change = (where) => (e) => {
     const [outer, i, inner] = where.split('.');
     if (i == null) data[outer] = e.target.value;
@@ -23,7 +23,7 @@ export default function Form({ data, setData }) {
   };
 
   return (
-    <form>
+    <form onSubmit={() => setEditMode(false)}>
       <GeneralFieldSet data={data} change={change} />
       <EducationFieldSet data={data} change={change} remove={remove} add={add} />
       <PracticeFieldSet data={data} change={change} remove={remove} add={add} />
